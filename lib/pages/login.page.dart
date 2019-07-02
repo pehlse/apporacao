@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:apptest/pages/signUp.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -19,14 +20,20 @@ class LoginPage extends StatelessWidget {
               child: Image.asset('assets/logo.png'),
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: 'E-mail',
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                ),
                 labelStyle: TextStyle(
-                  color: Colors.black38,
+                  color: Colors.black,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -41,8 +48,14 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Senha',
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                ),
                 labelStyle: TextStyle(
-                  color: Colors.black38,
+                  color: Colors.black,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -71,8 +84,8 @@ class LoginPage extends StatelessWidget {
                   end: Alignment.bottomRight,
                   stops: [0.3, 1],
                   colors: [
-                    Color(0xFFF58524),
-                    Color(0XFFF92B7F),
+                    Color(0xFF4B6CB7),
+                    Color(0xFF182848),
                   ],
                 ),
                 borderRadius: BorderRadius.all(
@@ -103,6 +116,60 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {},
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              height: 60,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: [0.3, 1],
+                  colors: [
+                    Color(0xFF4B6CB7),
+                    Color(0xFF182848),
+                  ],
+                ),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(5),
+                ),
+              ),
+              child: SizedBox.expand(
+                child: FlatButton(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        "Cadastre-se",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      Container(
+                        child: SizedBox(
+                          child: Image.asset("assets/form.png"),
+                          height: 28,
+                          width: 28,
+                        ),
+                      )
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignUpPage(),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),

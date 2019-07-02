@@ -73,3 +73,5 @@ flutter:
   assets: 
     - assets/logo.png
     - assets/envelope.png
+    - assets/form.png
+    - assets/profile.jpeg
