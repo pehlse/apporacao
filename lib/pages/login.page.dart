@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:apptest/pages/signUp.dart';
+import 'package:apptest/pages/homePage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -115,7 +116,14 @@ class LoginPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
